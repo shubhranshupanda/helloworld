@@ -1,6 +1,6 @@
 # Update local code from GitHub
 echo "🔁 Pulling latest code from GitHub..."
-git pull origin main
+git pull origin
 
 # Switch to Minikube Docker daemon
 echo "🐳 Using Minikube Docker environment..."
