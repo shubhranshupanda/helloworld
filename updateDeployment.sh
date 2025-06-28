@@ -1,5 +1,5 @@
 #!/bin/bash
-
+git pull origin
 # Switch to Minikube's Docker daemon
 eval $(minikube docker-env)
 
