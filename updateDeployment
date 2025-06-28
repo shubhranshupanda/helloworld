@@ -1,4 +1,0 @@
-#!/bin/bash
-eval $(minikube docker-env)
-docker build -t freetricksworld/helloworld:latest .
-kubectl rollout restart deployment mytestapp
