@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-pvc
+  template:
+    metadata:
+      labels:
+        app: nginx-pvc
+    spec:
+      containers:
+      - name: helloworld
+        image: freetricksworld/helloworld:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html-volume
+        persistentVolumeClaim:
+          claimName: html-pvc
