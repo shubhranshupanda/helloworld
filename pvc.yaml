@@ -3,7 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: html-pvc
 spec:
-  volumeName: html-pv       # 👈 force this PVC to bind to your static PV
+  storageClassName: ""         # ⬅️ critical line to match static PV with no storage class
+  volumeName: html-pv          # ⬅️ explicitly bind to your PV
   accessModes:
     - ReadWriteOnce
   resources:
